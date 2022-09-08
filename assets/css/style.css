@@ -65,18 +65,14 @@ a:hover {
   .link-a {
     font-size: 0.9rem;
   }
-  .section-footer {
-    text-align:center;
-}
+
 }
 
 @media (min-width: 992px) {
   .link-a {
     font-size: 1rem;
   }
-  .section-footer {
-    text-align:center;
-    }
+
 }
 
 .link-a:hover {
