@@ -65,7 +65,7 @@ a:hover {
   .link-a {
     font-size: 0.9rem;
   }
-  .widget-a {
+  .section-footer {
     text-align:center;
 }
 }
@@ -74,7 +74,7 @@ a:hover {
   .link-a {
     font-size: 1rem;
   }
-  .widget-a {
+  .section-footer {
     text-align:center;
     }
 }
