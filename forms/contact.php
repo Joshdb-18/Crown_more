@@ -1,4 +1,29 @@
 <?php
+if ($_POST) {
+	$visitor_name = $_POST['name'];
+	$visitor_email = $_POST['email'];
+	$email_subject = $_POST['subject'];
+	$email_body = ""
+	if(isset($_POST['message'])) {
+        $visitor_message = htmlspecialchars($_POST['message']);
+        $email_body .= "<div>
+                           <label><b>Visitor Message:</b></label>
+                           <div>".$visitor_message."</div>
+                        </div>";
+    }
+	$email_body = "</div>";
+	$headers = 'MIME-Version: 1.0' . "\r\n"
+	.'Content-type: text/html; charset=utf-8' . "\r\n"
+	.'From: ' . $visitor_email . "\r\n";
+	$recipient = "albertjoshua122@gmail.com";
+	if(mail($recipient, $email_body, $headers)) {
+		echo "<p> Thank you for contacting us, $visitor_name. You will get a reply within 24 hours.</p>";
+	} else {
+		echo '<p>We are sorry but the email did not go through.</p>';
+	}
+} else {
+	echo '<p>Something went wrong</p>';
+}
   /**
   * Requires the "PHP Email Form" library
   * The "PHP Email Form" library is available only in the pro version of the template
@@ -38,18 +63,5 @@
   //$contact->add_message( $_POST['message'], 'Message', 10);
   //mail($receiving_email_address, $contact->subject, $contact->add_message);
   //echo $contact->send();
-header("Content-type: text/plain");
 
-$to = $_POST['message']['to'];
-$subject = $_POST['subject'];
-$plain = $_POST['message'];
-
-if ($to == 'albertjoshua122@gmail.com'){
-	header("HTTP/1.0 200 OK");
-	echo("success");
-}else{
-	header("HTTP/1.0 403 OK");
-	echo('user not allowed here');
-}
-exit;
 ?>
