@@ -65,12 +65,18 @@ a:hover {
   .link-a {
     font-size: 0.9rem;
   }
+  .widget-a {
+    text-align:center;
+}
 }
 
 @media (min-width: 992px) {
   .link-a {
     font-size: 1rem;
   }
+  .widget-a {
+    text-align:center;
+    }
 }
 
 .link-a:hover {
