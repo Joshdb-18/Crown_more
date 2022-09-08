@@ -7,7 +7,7 @@
   */
 
   // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'albertjoshua122@gmail.com';
+  //$receiving_email_address = 'albertjoshua122@gmail.com';
 
  // if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
    // include( $php_email_form );
@@ -19,9 +19,9 @@
  // $contact->ajax = true;
 
   //$contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+ // $contact->from_name = $_POST['name'];
+ // $contact->from_email = $_POST['email'];
+ // $contact->subject = $_POST['subject'];
 
   // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
   /*
@@ -33,9 +33,23 @@
   );
   */
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
-  mail($receiving_email_address, $contact->subject, $contact->add_message);
-  echo $contact->send();
+  //$contact->add_message( $_POST['name'], 'From');
+  //$contact->add_message( $_POST['email'], 'Email');
+  //$contact->add_message( $_POST['message'], 'Message', 10);
+  //mail($receiving_email_address, $contact->subject, $contact->add_message);
+  //echo $contact->send();
+header("Content-type: text/plain");
+
+$to = $_POST['message']['to'];
+$subject = $_POST['subject'];
+$plain = $_POST['message'];
+
+if ($to == 'albertjoshua122@gmail.com'){
+	header("HTTP/1.0 200 OK");
+	echo("success");
+}else{
+	header("HTTP/1.0 403 OK");
+	echo('user not allowed here');
+}
+exit;
 ?>
