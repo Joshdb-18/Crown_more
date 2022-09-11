@@ -18,7 +18,7 @@ if (!empty($_POST)) {
         $errors[] = 'Message is empty';
     }
     if (empty($errors)) {
-        $toEmail = 'albertjoshua122@gmail.com';
+        $toEmail = 'odamilola958@gmail.com';
         $emailSubject = $subject;
         $headers = ['From' => $email, 'Reply-To' => $email, 'Content-type' => 'text/html; charset=iso-8859-1'];
         $bodyParagraphs = ["Name: {$name}", "Email: {$email}", "Message:", $message];
