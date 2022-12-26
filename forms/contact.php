@@ -9,7 +9,7 @@ $crownmore_email = "odamilola958@gmail.com";
 This bit sets the URLs of the supporting pages.
 If you change the names of any of the pages, you will need to change the values here.
 */
-$feedback_page = "feedback.html";
+$feedback_page = "contact.html";
 $error_page = "error.html";
 $thankyou_page = "success.html";
 
